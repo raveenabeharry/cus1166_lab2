@@ -1,6 +1,20 @@
 { % extends “layout.html” %}
 
-app.route("/roster/")
-def class_roster():
-  class_roster = [("Alice","A", "Sophomore"), ("Marie","C", "Junior"), ("Jada","A", "Senior"),("Ella","A-", "Freshman"),("David","D", "Junior"), ("Alyssa","B", "Junior"),("Maya","A", Senior)]
-  return (class_roster = class_roster)
+<body>
+{% for student in roster%}
+  {%if grade_view== 1 %}
+    <h1>  The student's name {{student_name}} is and their grade is {{student_grade}}</h1>
+  {%else if grade__view == 2 %}
+    <h2> The student's name is {{student_name}} and their class standing is {{student_standing}} </h2>
+  {%else if grade__view == 0 %}
+    <h3>  The student's name is {{student_name}}, their grade is {{student_grade}}, and their standing is {{student_standing}}</h3>
+  {%else%}
+    <h4> The number you have entered is an invalid input. Please try again. </h4>
+  {%endif %}
+{%endfor%}
+
+</body>
+</html>
+
+
+
